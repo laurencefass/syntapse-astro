@@ -1,8 +1,10 @@
-# Astro Starter Kit: Basics
+# Syntapse Astro Playground
 
 ```sh
 npm create astro@latest -- --template basics
 ```
+
+#### [See syntapse.co.uk demo](https://astro.syntapse.co.uk) or
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
 [![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
