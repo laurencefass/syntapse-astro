@@ -22,7 +22,7 @@ export const Publisher = () => {
   const name = useStore($name);
 
   return <div>
-    <h1>Share state between React components using nanostores</h1>
+    <h1>Shared state between React components using nanostores</h1>
     <div className="bordered">
       <h2>Publisher</h2>
       <div>name: <input onChange={(e) => $name.set(e.target.value)} type="text" /></div>
