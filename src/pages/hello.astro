@@ -1,0 +1,14 @@
+---
+import { GET } from "./api/hello";
+
+let response = await GET(Astro);
+const data = await response.json();
+
+function getServerData() {
+  console.log("getServerData executed");
+  return "Server generated data";
+}
+---
+
+<h1>{data.greeting} world! env-key={data.key}</h1>
+<h1>{getServerData()}</h1>
