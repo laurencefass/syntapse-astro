@@ -1,0 +1,9 @@
+---
+import { Publisher, Subscriber } from "../components/react/PubSub";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="React" transition:persist>
+  <Publisher client:load />
+  <Subscriber client:load />
+</Layout>

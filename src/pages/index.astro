@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { Publisher, Subscriber } from "../components/react/PubSub"
 ---
 
 <Layout title="Welcome to Astro.">
@@ -38,11 +37,34 @@ import { Publisher, Subscriber } from "../components/react/PubSub"
       <img class="logo" src="/syntapse-logo-2.png" />
       <h1><span class="text-gradient">Syntapse Astro Playground</span></h1>
     </div>
-	<p>Astro is a modern front-end framework designed to deliver lightning-fast websites by leveraging a unique approach to web development. One of its core benefits is its focus on performance, primarily achieved through partial hydration. Unlike traditional Single Page Applications (SPA) that load and hydrate an entire application upfront, Astro intelligently only hydrates the components that need interactivity, significantly reducing the amount of JavaScript sent to the browser. This results in faster page load times and a more efficient use of resources, which is crucial for improving user experience and SEO rankings.</p>
-	<Publisher client:load />
-	<Subscriber client:load />
-	<p>Astro also supports a wide array of front-end frameworks like React, Vue, Svelte, and Preact out of the box. This interoperability allows developers to use components from different libraries seamlessly within the same project, offering the flexibility to choose the best tool for the job without being locked into a specific ecosystem. Furthermore, Astro's built-in server-side rendering (SSR) and static site generation (SSG) capabilities enhance SEO and allow for rapid content delivery by serving pre-rendered pages to users.</p>
-	<p>Another significant advantage of using Astro is its developer experience. Astro provides an intuitive file-based routing system, easy-to-use templating with components, and a zero-JavaScript mode for creating static sites, making it an attractive choice for developers looking to build fast, scalable, and maintainable web applications.</p>
+    <p>
+      Astro is a modern front-end framework designed to deliver lightning-fast
+      websites by leveraging a unique approach to web development. One of its
+      core benefits is its focus on performance, primarily achieved through
+      partial hydration. Unlike traditional Single Page Applications (SPA) that
+      load and hydrate an entire application upfront, Astro intelligently only
+      hydrates the components that need interactivity, significantly reducing
+      the amount of JavaScript sent to the browser. This results in faster page
+      load times and a more efficient use of resources, which is crucial for
+      improving user experience and SEO rankings.
+    </p>
+    <p>
+      Astro also supports a wide array of front-end frameworks like React, Vue,
+      Svelte, and Preact out of the box. This interoperability allows developers
+      to use components from different libraries seamlessly within the same
+      project, offering the flexibility to choose the best tool for the job
+      without being locked into a specific ecosystem. Furthermore, Astro's
+      built-in server-side rendering (SSR) and static site generation (SSG)
+      capabilities enhance SEO and allow for rapid content delivery by serving
+      pre-rendered pages to users.
+    </p>
+    <p>
+      Another significant advantage of using Astro is its developer experience.
+      Astro provides an intuitive file-based routing system, easy-to-use
+      templating with components, and a zero-JavaScript mode for creating static
+      sites, making it an attractive choice for developers looking to build
+      fast, scalable, and maintainable web applications.
+    </p>
     <ul role="list" class="link-card-grid">
       <Card
         href="https://docs.astro.build/"
@@ -73,13 +95,13 @@ import { Publisher, Subscriber } from "../components/react/PubSub"
     display: flex;
     align-items: center;
     width: 100%;
-	align-self: center;
+    align-self: center;
   }
 
   .heading .logo {
     width: 30%;
-	padding: 2vw;
-	max-width: 100px;
+    padding: 2vw;
+    max-width: 100px;
     object-fit: contain;
   }
 

@@ -1,14 +1,18 @@
 ---
 import { GET } from "./api/hello";
+import Layout from "../layouts/Layout.astro";
 
 let response = await GET(Astro);
 const data = await response.json();
 
 function getServerData() {
   console.log("getServerData executed");
-  return "Server generated data";
+  return "This message was generated on the server!";
 }
 ---
 
-<h1>{data.greeting} world! env-key={data.key}</h1>
-<h1>{getServerData()}</h1>
+<Layout title="hello">
+  <p>{data.greeting} world!</p>
+  <p>server env-key={data.key}</p>
+  <p>{getServerData()}</p>
+</Layout>

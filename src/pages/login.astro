@@ -1,1 +1,27 @@
-<h1>Login</h1>
+---
+import Layout from "../layouts/Layout.astro";
+
+function getServerData(data, delay) {
+  console.log("getServerData executed");
+  return new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(data);
+    }, delay)
+  );
+}
+---
+
+<Layout title="login">
+  <h1>Login</h1>
+  <p>Not much to see here (yet)</p>
+</Layout>
+
+<!-- <div>
+  {await getServerData("data1", 5000).then((value) => <h1>{value}</h1>)}
+</div>
+<div>
+  {await getServerData("data2", 10000).then((value) => <h1>{value}</h1>)}
+</div>
+<div>
+  {await getServerData("data3", 15000).then((value) => <h1>{value}</h1>)}
+</div> -->
