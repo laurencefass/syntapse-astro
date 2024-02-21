@@ -1,0 +1,21 @@
+---
+import { CallServer, RenderServerData } from "../components/react/CallServer";
+import Layout from "../layouts/Layout.astro";
+
+function callback() {
+  console.log("callback executed");
+}
+
+function getServerData() {
+  return "This message was generated on the server!";
+}
+---
+
+<Layout title="React" transition:persist>
+  <p>
+    Tried to call a server defined function from React component and doesnt work
+    as functions cant be serialized
+  </p>
+  <CallServer client:load callback={callback} />
+  <RenderServerData client:load message={getServerData()} />
+</Layout>
