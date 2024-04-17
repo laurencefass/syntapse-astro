@@ -2,7 +2,7 @@ version: '3'
 
 services:
   astro:
-    image: node:18.17.0
+    image: node:18.17.0-alpine
     hostname: astro 
     container_name: astro
     environment:
