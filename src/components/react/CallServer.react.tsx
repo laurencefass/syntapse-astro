@@ -1,3 +1,5 @@
+/** @jsxImportSource react */
+
 import React, { useEffect } from "react"
 
 // Define the props type to include a function called 'onLoadFunction'

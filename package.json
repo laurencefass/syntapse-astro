@@ -10,17 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.4",
-    "@astrojs/node": "^8.2.0",
-    "@astrojs/react": "^3.0.10",
-    "@nanostores/react": "^0.7.1",
-    "@types/react": "^18.2.56",
-    "@types/react-dom": "^18.2.19",
-    "astro": "^4.4.0",
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/node": "^8.3.1",
+    "@astrojs/react": "^3.6.0",
+    "@builder.io/qwik": "^1.5.7",
+    "@nanostores/react": "^0.7.2",
+    "@qwikdev/astro": "^0.5.16",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.10.3",
     "dotenv": "^16.4.5",
-    "nanostores": "^0.9.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.3.3"
+    "nanostores": "^0.10.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.4.5"
   }
 }
