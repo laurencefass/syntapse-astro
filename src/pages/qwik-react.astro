@@ -1,0 +1,16 @@
+---
+import { ReactSubscriber } from "../components/qwik-react/sub.react";
+import { QwikPublisher } from "../components/qwik-react/pub.qwik";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="React">
+  <h1>This page demonstrates inter-island communication between React and Qwik components.</h1>
+  <hr/>
+  <h1>Qwik to React</h1>
+  <QwikPublisher />
+  <ReactSubscriber client:load />
+  <hr/>
+  <h1>React to Qwik</h1>
+  <div>TBD</div>
+</Layout>
