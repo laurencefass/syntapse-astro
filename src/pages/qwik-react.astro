@@ -1,16 +1,23 @@
 ---
-import { ReactSubscriber } from "../components/qwik-react/sub.react";
-import { QwikPublisher } from "../components/qwik-react/pub.qwik";
+import { ReactPublisher, ReactSubscriber } from "../components/qwik-react/pubsub.react";
+import { QwikPublisher, QwikSubscriber } from "../components/qwik-react/pubsub.qwik";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="React">
-  <h1>This page demonstrates inter-island communication between React and Qwik components.</h1>
+  <h1>Inter-island communication between React and Qwik components using nanostores</h1>
+  <p>Qwik uses signals so components don't re-render</p>
   <hr/>
-  <h1>Qwik to React</h1>
-  <QwikPublisher />
-  <ReactSubscriber client:load />
-  <hr/>
-  <h1>React to Qwik</h1>
-  <div>TBD</div>
+  <div style="display: flex; justify-content: space-evenly; 100vw">
+    <div>
+      <h1>Qwik to React</h1>
+      <QwikPublisher />
+      <ReactSubscriber client:load />    
+    </div>
+    <div>
+      <h1>React to Qwik</h1>
+      <ReactPublisher client:load/>
+      <QwikSubscriber />
+    </div> 
+  </div>
 </Layout>
