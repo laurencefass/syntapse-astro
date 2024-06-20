@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/node": "^8.3.1",
     "@astrojs/react": "^3.6.0",
+    "@astrojs/solid-js": "^4.4.0",
     "@builder.io/qwik": "^1.5.7",
     "@nanostores/react": "^0.7.2",
     "@qwikdev/astro": "^0.5.16",
@@ -23,6 +24,7 @@
     "nanostores": "^0.10.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "solid-js": "^1.8.17",
     "typescript": "^5.4.5"
   }
 }
