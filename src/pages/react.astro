@@ -4,6 +4,6 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="React">
-  <Publisher client:load />
-  <Subscriber client:load />
+  <Publisher client:only="react" />
+  <Subscriber client:only="react" />
 </Layout>

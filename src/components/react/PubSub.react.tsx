@@ -12,6 +12,8 @@ export const Subscriber = () => {
   const count = useStore($counter);
   const name = useStore($name);
 
+  console.log("Subscriber rendering");
+
   useEffect(() => {
     console.log("Subscriber loaded");
   }, [])
@@ -26,6 +28,8 @@ export const Subscriber = () => {
 export const Publisher = () => {
   const count = useStore($counter);
   const name = useStore($name);
+
+  console.log("Publisher rendering");
 
   useEffect(() => {
     console.log("Publisher loaded");
