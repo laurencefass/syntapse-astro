@@ -2,7 +2,7 @@
 import Router from "../components/Router.astro";
 import { Image } from 'astro:assets';
 import syntapseLogo from "../assets/syntapse-logo-2.png";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions, slide } from 'astro:transitions';
 import { IntervalCounter } from"../components/react/IntervalCounter"
 
 interface Props {
@@ -25,16 +25,16 @@ const { title } = Astro.props;
   </head>
   <body>
     <Router />
-    <IntervalCounter client:load transition:persist/>
+    <!-- <IntervalCounter client:load transition:persist/> -->
     <div style="display:flex; gap: 50px">
       <div transition:persist>
-        <h2>html video element</h2>
-        <video width="560" controls>
+        <!-- <h2>html video element</h2> -->
+        <video width="420" controls>
           <source src="/astro.mp4" type="video/mp4">
           Your browser does not support HTML video.
         </video>
       </div>
-      <div transition:persist>
+      <!-- <div transition:persist>
         <h2>youtube iframe</h2>
         <iframe 
         width="560" 
@@ -44,18 +44,23 @@ const { title } = Astro.props;
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" 
         allowfullscreen/>
-      </div>  
+      </div>   -->
     </div>
     <div class="heading">
       <Image class="logo" src={syntapseLogo} alt="test"/>
       <h1><span class="text-gradient">Syntapse Astro Playground</span></h1>
     </div>
-    <div class="slot">
+    <div class="slot"transition:animate={slide({ duration: '1s' })}>
       <slot />
     </div>
   </body>
 </html>
 <style is:global>
+  video {
+    position: absolute;
+    top: 33%;
+    left:0px;
+  }
     .slot {
       max-width: 800px;
       margin: auto;
