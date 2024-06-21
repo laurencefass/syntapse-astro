@@ -1,5 +1,9 @@
 ---
 import Router from "../components/Router.astro";
+import { Image } from 'astro:assets';
+import syntapseLogo from "../assets/syntapse-logo-2.png";
+import { ViewTransitions } from 'astro:transitions';
+import { IntervalCounter } from"../components/react/IntervalCounter"
 
 interface Props {
   title: string;
@@ -11,6 +15,7 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <ViewTransitions />
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -20,9 +25,55 @@ const { title } = Astro.props;
   </head>
   <body>
     <Router />
-    <slot />
+    <IntervalCounter client:load transition:persist/>
+    <div transition:persist>
+      <iframe 
+      width="560" 
+      height="315" 
+      src="https://www.youtube.com/embed/zrPVTf761OI?si=jmAtFkKV54i-dZT9" 
+      title="YouTube video player" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen/>
+    </div>
+    <div class="heading">
+      <Image class="logo" src={syntapseLogo} alt="test"/>
+      <h1><span class="text-gradient">Syntapse Astro Playground</span></h1>
+    </div>
+    <div>{Math.random().toFixed(4)}</div>
+    <div class="slot">
+      <slot />
+    </div>
   </body>
 </html>
+<style is:global>
+    .slot {
+      max-width: 800px;
+      margin: auto;
+    }
+    .heading {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .heading .logo {
+    max-width: 60px;
+    object-fit: contain;
+    margin-right: 10px;
+  }
+  .heading h1 {
+    font-size: 4em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+</style>
 <style is:global>
   :root {
     --accent: 136, 58, 234;

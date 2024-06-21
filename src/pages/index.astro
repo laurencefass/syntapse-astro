@@ -33,10 +33,6 @@ import Card from "../components/Card.astro";
         </linearGradient>
       </defs>
     </svg>
-    <div class="heading">
-      <img class="logo" src="/syntapse-logo-2.png" />
-      <h1><span class="text-gradient">Syntapse Astro Playground</span></h1>
-    </div>
     <p>
       Astro is a modern front-end framework designed to deliver lightning-fast
       websites by leveraging a unique approach to web development. One of its
@@ -91,30 +87,10 @@ import Card from "../components/Card.astro";
 </Layout>
 
 <style>
-  .heading {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    align-self: center;
-  }
-
-  .heading .logo {
-    width: 30%;
-    padding: 2vw;
-    max-width: 100px;
-    object-fit: contain;
-  }
-
-  .heading h1 {
-    width: 70%;
-    margin-left: 20px;
-  }
-
   main {
     margin: auto;
     padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
+    max-width: 800px;
     color: white;
     font-size: 20px;
     line-height: 1.6;
@@ -134,13 +110,6 @@ import Card from "../components/Card.astro";
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
   }
   .instructions {
     margin-bottom: 2rem;
