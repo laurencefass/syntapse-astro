@@ -13,7 +13,7 @@ export const IntervalCounter = () => {
 
   return (
     <div>
-      <h1>Counter: {count}</h1>
+      <h1>React counter: {count}</h1>
     </div>
   );
 };
