@@ -1,5 +1,6 @@
 /** @jsxImportSource react */
 
+import React from "react";
 import { useEffect } from 'react';
 import { atom } from 'nanostores'
 import { useStore } from '@nanostores/react'

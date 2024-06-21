@@ -7,9 +7,15 @@ import solid from "@astrojs/solid-js";
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    qwik(),
-    react(),
-    solid(), 
+    solid({
+      include: ["**/*.solid.ts*"],
+    }), 
+    qwik({
+      include: ["**/*.qwik.ts*"],
+    }),
+    react({
+      include: ["**/*.react.ts*"],
+    }),
   ], 
   output: "server",
   adapter: node({

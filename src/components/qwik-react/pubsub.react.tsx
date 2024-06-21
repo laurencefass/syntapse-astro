@@ -1,5 +1,6 @@
 /** @jsxImportSource react */
 
+import React from "react";
 import { useEffect, useState } from "react";
 import { $counter1, $counter2 } from "../../nanostore";
 
