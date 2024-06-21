@@ -26,15 +26,25 @@ const { title } = Astro.props;
   <body>
     <Router />
     <IntervalCounter client:load transition:persist/>
-    <div transition:persist>
-      <iframe 
-      width="560" 
-      height="315" 
-      src="https://www.youtube.com/embed/zrPVTf761OI?si=jmAtFkKV54i-dZT9" 
-      title="YouTube video player" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" 
-      allowfullscreen/>
+    <div style="display:flex; gap: 50px">
+      <div transition:persist>
+        <h2>html video element</h2>
+        <video width="560" controls>
+          <source src="/astro.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+      </div>
+      <div transition:persist>
+        <h2>youtube iframe</h2>
+        <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/zrPVTf761OI?si=jmAtFkKV54i-dZT9" 
+        title="YouTube video player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen/>
+      </div>  
     </div>
     <div class="heading">
       <Image class="logo" src={syntapseLogo} alt="test"/>
