@@ -1,6 +1,25 @@
 version: '3'
 
 services:
+  astrodev:
+    image: node:18.17.0-alpine
+    hostname: astrodev 
+    container_name: astrodev
+    environment:
+    # ${VAR_XXX} are required system env vars - add them to ~./bashrc
+    - VIRTUAL_HOST=astrodev.${LETSENCRYPT_HOST}
+    - LETSENCRYPT_HOST=astrodev.${LETSENCRYPT_HOST}
+    - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+    expose:
+      - "4321"
+    volumes:
+      - .:/app
+    working_dir: /app
+    # command: tail -f /dev/null    
+    command: npm run dev -- --host
+    networks:
+      main-net: 
+
   astro:
     image: node:18.17.0-alpine
     hostname: astro 
@@ -15,10 +34,9 @@ services:
     volumes:
       - .:/app
     working_dir: /app
-    command: tail -f /dev/null    
+    # command: tail -f /dev/null    
     # command: npm run build
-    # command: npm run dev -- --host
-    # command: npm run serve -- --host
+    command: npm run serve -- --host
     networks:
       main-net: 
 
