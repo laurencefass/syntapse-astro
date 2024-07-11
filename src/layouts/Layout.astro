@@ -1,5 +1,6 @@
 ---
 import Router from "../components/router/index.astro";
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -16,11 +17,18 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions />
 		<title>{title}</title>
 	</head>
 	<body>
 		<Router />
 		<slot />
+		<div class="video" transition:persist >
+			This video will continue to play across route changes using ViewTransition directives
+			<video controls="" autoplay="">
+				<source src="/astro.mp4" type="video/mp4">
+			</video>
+			</div>
 	</body>
 </html>
 <style is:global>
@@ -34,6 +42,21 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+	}
+	main {
+		padding: 20px;
+	}
+	.video {
+		position: fixed;
+		bottom: 0px;
+		right: 20px;
+		display: flex;
+		flex-direction: column;
+		width: 280px;
+		gap: 10px;
+	}
+	.video video {
+		width: 280px;
 	}
 	html {
 		font-family: system-ui, sans-serif;

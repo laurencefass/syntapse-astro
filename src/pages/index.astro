@@ -33,7 +33,10 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro!</span></h1>
+		<h1>Syntapse <span class="text-gradient">Astro</span></h1>
+		<h3>Multi-framework micro-frontends! get ready for takeoff!</h3>
+		<h3>This is the default install integrated with React, Qwik and Solid</h3>
+		<h3>Using nanostores for state management inter-island communication</h3>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
@@ -88,6 +91,9 @@ import Card from '../components/Card.astro';
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
+	}
+	h3 {
+		text-align: center;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
