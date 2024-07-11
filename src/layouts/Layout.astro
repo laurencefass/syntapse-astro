@@ -47,6 +47,8 @@ const { title } = Astro.props;
 		padding: 20px;
 	}
 	.video {
+		resize: both;
+		overflow: auto;
 		position: fixed;
 		bottom: 0px;
 		right: 20px;
@@ -54,9 +56,10 @@ const { title } = Astro.props;
 		flex-direction: column;
 		width: 280px;
 		gap: 10px;
+		border: 2px solid gray;
 	}
 	.video video {
-		width: 280px;
+		width: 100%;
 	}
 	html {
 		font-family: system-ui, sans-serif;
