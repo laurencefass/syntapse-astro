@@ -1,4 +1,6 @@
 ---
+import Router from "../components/router/index.astro";
+
 interface Props {
 	title: string;
 }
@@ -17,6 +19,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Router />
 		<slot />
 	</body>
 </html>
@@ -50,5 +53,15 @@ const { title } = Astro.props;
 	}
 	* {
 		color:White
+	}
+	.bordered {
+ 	   border: 1px solid rgb(58, 57, 57);
+    	padding: 2vw;
+	}
+	button {
+		color: black;
+		background: gray;
+		border-radius: 10px;
+		padding: 10px;
 	}
 </style>

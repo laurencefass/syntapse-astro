@@ -1,0 +1,40 @@
+---
+import {
+  ReactPublisher,
+  ReactSubscriber,
+} from "../../components/qwik-react/pubsub.react";
+import {
+  QwikPublisher,
+  QwikSubscriber,
+} from "../../components/qwik-react/pubsub.qwik";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="React">
+  <main>
+    <h1>Astro, Qwik and React integration</h1>
+    <h2>
+      Sharing state between different framework components using nanostores
+    </h2>
+    <ul>
+      <li>
+        Astro only seems to support nanostores for inter-island communication
+      </li>
+      <li>Qwik uses signals so components don't re-render</li>
+      <li>It would be good to integrate signals for react too.</li>
+      <hr />
+      <div style="display: flex; gap: 10%; justify-content: left; 100vw">
+        <div>
+          <h1>Qwik to React</h1>
+          <QwikPublisher />
+          <ReactSubscriber client:load />
+        </div>
+        <div>
+          <h1>React to Qwik</h1>
+          <ReactPublisher client:load />
+          <QwikSubscriber />
+        </div>
+      </div>
+    </ul>
+  </main>
+</Layout>
