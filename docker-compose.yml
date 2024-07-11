@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  astro:
+    image: node:18.17.0-alpine
+    hostname: astro 
+    container_name: astro
+    environment:
+    # ${VAR_XXX} are required system env vars - add them to ~./bashrc
+    - VIRTUAL_HOST=astro.${LETSENCRYPT_HOST}
+    - LETSENCRYPT_HOST=astro.${LETSENCRYPT_HOST}
+    - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+    expose:
+      - "4321"
+    volumes:
+      - .:/app
+    working_dir: /app
+    # command: tail -f /dev/null    
+    # command: npm run build
+    command: npm run dev -- --host
+    # command: npm run serve -- --host
+    networks:
+      main-net: 
+
+networks:
+  main-net:
+    external:
+      name: proxy_main-net
