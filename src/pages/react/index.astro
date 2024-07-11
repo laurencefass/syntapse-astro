@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { IntervalCounter } from "../../components/react/IntervalCounter.react";
+import { Publisher, Subscriber } from "../../components/react/PubSub.react";
+---
+
+<Layout title="Astro react">
+	<main>
+        <h1>React Astro integration</h1>
+        Rendering interactive React islands in Astro
+        <IntervalCounter client:load/>
+        <Publisher client:load/>
+        <Subscriber client:load/>
+    </main>
+</Layout>

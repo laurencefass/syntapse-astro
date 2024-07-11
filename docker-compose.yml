@@ -15,9 +15,9 @@ services:
     volumes:
       - .:/app
     working_dir: /app
-    # command: tail -f /dev/null    
+    command: tail -f /dev/null    
     # command: npm run build
-    command: npm run dev -- --host
+    # command: npm run dev -- --host
     # command: npm run serve -- --host
     networks:
       main-net: 
